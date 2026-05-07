@@ -127,7 +127,7 @@
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center gap-6 font-inter text-sm font-medium tracking-tight">
             <a class="text-emerald-700 border-b-2 border-emerald-700 pb-1" href="{{ route('beranda') }}">Etalase</a>
-            <a class="text-slate-600 hover:text-emerald-700 transition-colors" href="#kategori">Kategori</a>
+            <a class="text-slate-600 hover:text-emerald-700 transition-colors" href="{{ route('kategori') }}">Kategori</a>
             <a class="text-slate-600 hover:text-emerald-700 transition-colors" href="{{ route('produk') }}">Produk</a>
             <a class="text-slate-600 hover:text-emerald-700 transition-colors" href="{{ route('daftar') }}">Kemitraan</a>
         </div>

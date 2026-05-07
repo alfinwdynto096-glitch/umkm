@@ -149,8 +149,8 @@
 
 <body class="bg-background text-on-surface">
     <div class="flex min-h-screen">
-        {{-- SideNavBar --}}
-        @include('partials.sidebar', ['activePage' => 'dashboard'])
+        <!-- SideNavBar -->
+        @include('components.sidebar')
         <!-- Main Content Canvas -->
         <main class="flex-1 flex flex-col min-w-0">
             <!-- TopBar Admin -->
@@ -189,7 +189,9 @@
                 <!-- Welcome Section -->
                 <div>
                     <h1 class="font-h2 text-h2 text-primary">Ringkasan Bisnis</h1>
-                    <p class="font-body-md text-slate-500">Selamat datang kembali, berikut performa UMKM hari ini.</p>
+                    <p class="font-body-md text-slate-500">Selamat datang kembali <b
+                            class="text-primary">{{ Auth::user()?->name ?? 'Pengguna' }}</b>, berikut performa UMKM hari
+                        ini.</p>
                 </div>
                 <!-- Statistics Widgets (Bento Grid) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">

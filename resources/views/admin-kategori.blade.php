@@ -146,8 +146,7 @@
 
 <body class="bg-background text-on-surface">
     <div class="flex min-h-screen">
-        {{-- SideNavBar --}}
-        @include('partials.sidebar', ['activePage' => 'kategori'])
+        @include('components.sidebar')
         <main class="flex-1 flex flex-col min-w-0">
             <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
                 <div class="max-w-[1320px] mx-auto px-6 py-4 flex items-center justify-between gap-6">
@@ -241,56 +240,8 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
-                                    @php
-                                        $categories = [
-                                            [
-                                                'name' => 'Batik & Tekstil',
-                                                'slug' => 'batik-tekstil',
-                                                'icon' => 'styler',
-                                                'products' => 64,
-                                                'order' => 1,
-                                                'status' => 'Aktif',
-                                                'color' => 'bg-emerald-100 text-emerald-800',
-                                            ],
-                                            [
-                                                'name' => 'Kuliner Nusantara',
-                                                'slug' => 'kuliner-nusantara',
-                                                'icon' => 'restaurant',
-                                                'products' => 82,
-                                                'order' => 2,
-                                                'status' => 'Aktif',
-                                                'color' => 'bg-orange-100 text-orange-800',
-                                            ],
-                                            [
-                                                'name' => 'Kerajinan Tangan',
-                                                'slug' => 'kerajinan-tangan',
-                                                'icon' => 'handyman',
-                                                'products' => 47,
-                                                'order' => 3,
-                                                'status' => 'Aktif',
-                                                'color' => 'bg-sky-100 text-sky-800',
-                                            ],
-                                            [
-                                                'name' => 'Kecantikan & Herbal',
-                                                'slug' => 'kecantikan-herbal',
-                                                'icon' => 'spa',
-                                                'products' => 31,
-                                                'order' => 4,
-                                                'status' => 'Aktif',
-                                                'color' => 'bg-violet-100 text-violet-800',
-                                            ],
-                                            [
-                                                'name' => 'Pertanian Lokal',
-                                                'slug' => 'pertanian-lokal',
-                                                'icon' => 'eco',
-                                                'products' => 24,
-                                                'order' => 5,
-                                                'status' => 'Draft',
-                                                'color' => 'bg-lime-100 text-lime-800',
-                                            ],
-                                        ];
-                                    @endphp
-                                    @foreach ($categories as $category)
+
+                                    @foreach ($query as $category)
                                         <tr class="hover:bg-slate-50 transition-colors">
                                             <td class="px-6 py-4">
                                                 <div class="flex items-center gap-3">
@@ -301,7 +252,7 @@
                                                     </div>
                                                     <div>
                                                         <p class="font-label-bold text-on-surface">
-                                                            {{ $category['name'] }}</p>
+                                                            {{ $category['nama'] }}</p>
                                                         <p class="text-xs text-outline">Kategori utama katalog</p>
                                                     </div>
                                                 </div>
@@ -311,16 +262,16 @@
                                             <td class="px-6 py-4 font-label-bold text-on-surface">
                                                 {{ $category['products'] }}</td>
                                             <td class="px-6 py-4 font-body-sm text-on-surface-variant">
-                                                #{{ $category['order'] }}</td>
+                                                #{{ $category['urutan'] }}</td>
                                             <td class="px-6 py-4">
-                                                @if ($category['status'] === 'Aktif')
+                                                @if ($category['is_active'] == 1)
                                                     <span
                                                         class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"><span
                                                             class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>Aktif</span>
                                                 @else
                                                     <span
                                                         class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800"><span
-                                                            class="w-1.5 h-1.5 rounded-full bg-orange-600"></span>Draft</span>
+                                                            class="w-1.5 h-1.5 rounded-full bg-orange-600"></span>Tidak Aktif</span>
                                                 @endif
                                             </td>
                                             <td class="px-6 py-4">

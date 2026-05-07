@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Kategori extends Model
+class kategori extends Model
 {
     //
     use HasFactory;
-
     protected $table = 'kategori';
-
-    protected $primarykey = 'id_kategori';
-
+    protected $primaryKey = 'id';
     protected $fillable = ['*'];
 }

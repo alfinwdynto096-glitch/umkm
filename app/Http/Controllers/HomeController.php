@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 class HomeController extends Controller
 {
     //
-    public function index()
+    public function home()
     {
+        return view('home');
+    }
+
+    public function index() {
         return view('home');
     }
 }

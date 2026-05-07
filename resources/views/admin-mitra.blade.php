@@ -146,8 +146,7 @@
 
 <body class="bg-background text-on-surface">
     <div class="flex min-h-screen">
-        {{-- SideNavBar --}}
-        @include('partials.sidebar', ['activePage' => 'mitra'])
+        @include('components.sidebar')
         <main class="flex-1 flex flex-col min-w-0">
             <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
                 <div class="max-w-[1320px] mx-auto px-6 py-4 flex items-center justify-between gap-6">

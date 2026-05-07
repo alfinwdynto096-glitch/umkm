@@ -9,10 +9,8 @@ class Mitra extends Model
 {
     //
     use HasFactory;
-
     protected $table = 'mitra';
-
-    protected $primarykey = 'id_mitra';
-
+    protected $primaryKey = 'id';
     protected $fillable = ['*'];
 }
+

@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers;
 
-class ProductController extends Controller
+use Illuminate\Http\Request;
+
+class ProdukController extends Controller
 {
     //
-    public function index()
-    {
+    public function index() {
         return view('produk');
     }
 
-    public function menu()
-    {
+    public function menu() {
         return view('menu');
     }
 
-    public function admin()
-    {
+    public function admin() {
         return view('admin-produk');
     }
 
-    public function tambah()
-    {
+    public function tambah() {
         return view('produk-add');
     }
+        
 }
